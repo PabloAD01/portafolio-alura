@@ -14,6 +14,8 @@ const sectionArray = [
   contactSection,
 ];
 
+/* Data */
+
 const skillsArray = [
   {
     name: "HTML",
@@ -177,6 +179,55 @@ const projectsArray = [
   },
 ];
 
+/*Funcion para mostrar las secciones */
+
+function showSection(sectionId) {
+  const selectedSection = document.getElementById(sectionId);
+  if (selectedSection) {
+    sectionArray.forEach((section) => {
+      if (section.id === sectionId) {
+        section.style.display = "flex";
+        setTimeout(() => {
+          section.style.opacity = 1;
+        }, 50);
+      } else {
+        section.style.opacity = 0;
+        setTimeout(() => {
+          section.style.display = "none";
+        }, 200);
+      }
+    });
+  }
+}
+
+/*Funcion para redimensionar la sección */
+function handleResize() {
+  if (window.innerWidth < 1024) {
+    sectionArray.forEach((section) => {
+      section.style.display = "flex";
+      section.style.opacity = 1;
+    });
+  } else {
+    const selectedSectionId = sectionArray.find((section) => {
+      return section.style.display !== "none";
+    }).id;
+    showSection(selectedSectionId);
+  }
+}
+
+// Agregar manejadores de eventos para cada sección
+sectionArray.forEach((section) => {
+  section.addEventListener("click", () => {
+    const sectionId = section.id;
+    showSection(sectionId);
+  });
+});
+
+// Agregar evento de redimensionamiento
+window.addEventListener("resize", handleResize);
+
+/*Funciones para poblar el navbar y las secciones */
+
 function showNavbar() {
   const navbar = document.getElementById("header__options");
   navbarArray.forEach((navbarItem) => {
@@ -188,21 +239,6 @@ function showNavbar() {
       >${navbarItem.name}</a
     >`;
   });
-}
-
-function showSection(sectionId) {
-  sectionArray.forEach((section) => {
-    section.style.opacity = 0;
-    section.style.display = "none";
-  });
-
-  const selectedSection = document.getElementById(sectionId);
-  if (selectedSection) {
-    selectedSection.style.display = "flex";
-    setTimeout(() => {
-      selectedSection.style.opacity = 1;
-    }, 50);
-  }
 }
 
 function showSkills() {
@@ -271,6 +307,7 @@ function showProjects() {
   });
 }
 
+/*LIGHT/DARK MODE */
 const darkModeToggle = document.getElementById("darkModeToggle");
 const body = document.body;
 const sunIcon = document.getElementById("sunIcon");
@@ -288,19 +325,25 @@ darkModeToggle.addEventListener("click", () => {
 const isDarkMode = localStorage.getItem("darkMode") === "true";
 if (isDarkMode) {
   body.classList.add("dark-mode");
-  moonIcon.classList.remove("hide");
+  sunIcon.classList.remove("hide");
   setTimeout(() => {
     body.classList.add("transition");
   }, 100);
 } else {
-  sunIcon.classList.remove("hide");
+  moonIcon.classList.remove("hide");
 }
 
+/*Inicializar navbar y secciones */
 showNavbar();
 showSkills();
 showHobbies();
 showEducation();
 showProjects();
+
+/* Manejador de redimensionamiento */
+handleResize();
+
+/*Validación de formulario */
 
 const form = document.getElementById("form");
 const nameInput = document.getElementById("name");
@@ -308,17 +351,104 @@ const emailInput = document.getElementById("email");
 const subjectInput = document.getElementById("subject");
 const messageInput = document.getElementById("message");
 
-nameInput.addEventListener("input", () => {
-  if (nameInput.value.trim() !== "") {
-    error.style.display = "none";
+const nameError = document.getElementById("nameError");
+const emailError = document.getElementById("emailError");
+const subjectError = document.getElementById("subjectError");
+const messageError = document.getElementById("messageError");
+
+/*Se validan los campos */
+function validateName() {
+  const name = nameInput.value.trim();
+  if (name === "") {
+    nameError.style.display = "block";
+    nameError.innerHTML = "El nombre no puede estar en blanco";
+    return false;
+  } else if (name.length > 50) {
+    nameError.style.display = "block";
+    nameError.innerHTML = "El nombre debe tener máximo 50 caracteres";
+    return false;
+  } else {
+    nameError.style.display = "none";
+    return true;
+  }
+}
+
+function validateEmail() {
+  const email = emailInput.value.trim();
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (email === "") {
+    emailError.style.display = "block";
+    emailError.innerHTML = "El correo electrónico no puede estar en blanco";
+    return false;
+  } else if (!emailPattern.test(email)) {
+    emailError.style.display = "block";
+    emailError.innerHTML = "El correo electrónico no es válido";
+    return false;
+  } else {
+    emailError.style.display = "none";
+    return true;
+  }
+}
+
+function validateSubject() {
+  const subject = subjectInput.value.trim();
+  if (subject === "") {
+    subjectError.style.display = "block";
+    subjectError.innerHTML = "El asunto no puede estar en blanco";
+    return false;
+  } else if (subject.length > 50) {
+    subjectError.style.display = "block";
+    subjectError.innerHTML = "El asunto debe tener máximo 50 caracteres";
+    return false;
+  } else {
+    subjectError.style.display = "none";
+    return true;
+  }
+}
+
+function validateMessage() {
+  const message = messageInput.value.trim();
+  if (message === "") {
+    messageError.style.display = "block";
+    messageError.innerHTML = "El mensaje no puede estar en blanco";
+    return false;
+  } else if (message.length > 300) {
+    messageError.style.display = "block";
+    messageError.innerHTML = "El mensaje debe tener máximo 300 caracteres";
+    return false;
+  } else {
+    messageError.style.display = "none";
+    return true;
+  }
+}
+
+/*Se verifica que todos los campos esten validados */
+
+function validateForm() {
+  const isNameValid = validateName();
+  const isEmailValid = validateEmail();
+  const isSubjectValid = validateSubject();
+  const isMessageValid = validateMessage();
+
+  return isNameValid && isEmailValid && isSubjectValid && isMessageValid;
+}
+
+form.addEventListener("submit", (event) => {
+  if (!validateForm()) {
+    event.preventDefault();
   }
 });
 
-form.addEventListener("submit", (event) => {
-  if (nameInput.value == "" || nameInput.value == null) {
-    event.preventDefault();
-    let error = document.getElementById("nameError");
-    error.style.display = "block";
-    error.innerHTML = "Name must not be empty";
-  }
+nameInput.addEventListener("input", validateName);
+emailInput.addEventListener("input", validateEmail);
+subjectInput.addEventListener("input", validateSubject);
+messageInput.addEventListener("input", validateMessage);
+
+/*Se inhabilita el botón de enviar inicialmente */
+const submitButton = document.querySelector(".form__button");
+submitButton.disabled = true;
+
+/*Se activa el botón de enviar cuando todos los campos estén validados */
+form.addEventListener("input", () => {
+  submitButton.disabled = !validateForm();
 });

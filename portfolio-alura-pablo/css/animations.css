@@ -1,0 +1,58 @@
+.wrapper.four {
+  font-size: 16px;
+  font-family: "Play", sans-serif;
+  width: 100px;
+}
+.four .type {
+  width: 100px;
+}
+.four h3 {
+  width: 15ch;
+  border-right: 2px solid black;
+  margin: 2rem auto;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 2s steps(15, end), blink-caret 0.5s step-end;
+}
+@-webkit-keyframes typing {
+  from {
+    width: 0;
+  }
+}
+@-webkit-keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.animated-section {
+  opacity: 0; /* Comienza con opacidad cero para que esté oculto */
+  transition: opacity 0.5s ease; /* Transición suave de la opacidad */
+}
+
+/* Define animaciones específicas para cada sección */
+.description.animated-section {
+  animation: fadeIn 1s ease 0.5s forwards; /* Animación de entrada para la sección de descripción */
+}
+
+.aboutMe__container.animated-section {
+  animation: fadeIn 1s ease 1s forwards; /* Espera 1 segundo después de la animación anterior */
+}
+
+.skills__container.animated-section {
+  animation: fadeIn 1s ease 1.5s forwards; /* Espera 1.5 segundos después de la animación anterior */
+}
+
+.projects__container.animated-section {
+  animation: fadeIn 1s ease 2s forwards; /* Espera 2 segundos aquí de la animación anterior */
+}
+
+/* Define animaciones de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

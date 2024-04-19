@@ -73,15 +73,15 @@ footer {
   transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-#moonIcon {
-  display: none;
-}
-
-.dark-mode #sunIcon {
+#sunIcon {
   display: none;
 }
 
 .dark-mode #moonIcon {
+  display: none;
+}
+
+.dark-mode #sunIcon {
   display: inline;
 }
 
@@ -90,5 +90,7 @@ footer {
 #subjectError,
 #messageError {
   color: red;
+  opacity: 0.8;
   display: none;
+  font-size: 0.8em;
 }
