@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/media.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="header__logo">
+          <i class="fa-solid fa-atom"></i>
+          <h1>Pablo Araya Díaz</h1>
+        </div>
+        <button id="darkModeToggle">
+          <i class="fa-regular fa-sun" alt="Sol" id="sunIcon"></i>
+          <i class="fa-regular fa-moon" alt="Luna" id="moonIcon"></i>
+        </button>
+        <nav id="header__options" class="header__options"></nav>
+        <a href="mailto:pablo_ad@live.com" class="header__mail"
+          >pablo_ad@live.com</a
+        >
+      </header>
+      <main>
+        <section class="description">
+          <div class="description__container">
+            <h1>Bienvenido a mi portafolio</h1>
+            <p>
+              Soy Pablo Araya Díaz, un estudiante chileno de 27 años cursando la
+              carrera de ingeniería civil con especialización en química,
+              comprometido con la excelencia y el crecimiento continuo. A través
+              de este portafolio, te invito a sumergirte en mi viaje de
+              aprendizaje y desarrollo en el mundo del desarrollo web y de
+              aplicaciones móviles.
+            </p>
+
+            <div class="description__links">
+              <a href="https://github.com/PabloAD01">Perfil de Github</a>
+            </div>
+          </div>
+          <img
+            src="https://res.cloudinary.com/doa6b7qnk/image/upload/v1713397656/Captura_de_pantalla_2024-04-17_204624_ldbfal.png"
+            alt="Mac screen with different programming languages on it"
+          />
+        </section>
+
+        <section id="aboutMe" class="aboutMe__container">
+          <h1>Sobre mí</h1>
+          <p>
+            Formado en la Universidad de Magallanes, soy un estudiante de último
+            año en la carrera de ingeniería civil con mención en química,
+            desarrollándome como developer de páginas web y aplicaciones
+            móviles.
+          </p>
+          <p>
+            He adquirido experiencia aprendiendo de forma autodidacta a través
+            de cursos en línea sobre distintos tipos de tecnologías. En mis
+            proyectos he utilizado tecnologías de desarrollo en frontend y
+            backend, tales como: React, React Native, Tailwind CSS, Node.js,
+            Express, MongoDB, Firebase, Typescript.
+          </p>
+          <p>
+            Con vistas de seguir aprendiendo sobre las tecnologías que se
+            utilizan actualmente y las emergentes que tengan un potencial de uso
+            masivo.
+          </p>
+          <p>
+            Actualmente me encuentro participando del proyecto de Alura Latam
+            junto a ONE (Oracle Next Education) con enfoque a la especialización
+            de desarrollo en Frontend complementado con el fortalecimiento de
+            las habilidades blandas en distintos ámbitos laborales o de
+            aprendizaje y el uso de buenas prácticas en la programación.
+          </p>
+        </section>
+        <section id="skills" class="skills__container">
+          <h2>Skills</h2>
+          <ul id="skills__list" class="skills__list"></ul>
+        </section>
+        <section id="hobbies" class="hobbies__container">
+          <h2>Hobbies</h2>
+          <ul id="hobbies__list" class="hobbies__list"></ul>
+        </section>
+        <section id="education" class="education__container">
+          <h2>Formación</h2>
+          <ul id="education__list" class="education__list"></ul>
+          <h2>Cursos</h2>
+          <ul id="courses__list" class="courses__list"></ul>
+        </section>
+        <section id="projects" class="projects__container">
+          <h2>Proyectos</h2>
+          <ul id="projects__list" class="projects__list"></ul>
+        </section>
+        <section id="contact" class="contact__container">
+          <img
+            class="contact__img"
+            src="https://img.freepik.com/free-photo/messages-floating-laptop_1134-307.jpg?t=st=1713400057~exp=1713403657~hmac=51bca366ead37bcc137fbe145fd51406c550b3607b56ad6c8cfd23046ca558d0&w=1060"
+            alt=" Laptop with envelopes on it"
+          />
+          <form action="/" id="form" class="contact__form">
+            <h2>Contacto</h2>
+            <div class="form__container">
+              <div class="form__control">
+                <label for="name">Nombre</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Ingrese su nombre"
+                  maxlength="50"
+                />
+                <div id="nameError"></div>
+              </div>
+              <div class="form__control">
+                <label for="email"> Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Ingrese su email"
+                />
+                <div id="emailError"></div>
+              </div>
+              <div class="form__control">
+                <label for="subject"> Asunto</label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  placeholder="Describa el asunto"
+                  maxlength="50"
+                />
+                <div id="subjectError"></div>
+              </div>
+              <div class="form__control">
+                <label for="message"> Mensaje</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Mensaje"
+                  rows="5"
+                  maxlength="300"
+                ></textarea>
+                <div id="messageError"></div>
+              </div>
+
+              <button class="form__button" type="submit">Enviar</button>
+            </div>
+          </form>
+        </section>
+      </main>
+
+      <footer>
+        <p>Desarrollado por Pablo Araya Díaz</p>
+        <p>2024</p>
+      </footer>
+    </div>
+  </body>
+</html>

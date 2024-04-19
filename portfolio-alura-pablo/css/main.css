@@ -1,0 +1,268 @@
+.container {
+  padding: 0px 32px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  gap: 16px;
+}
+
+main {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/*Sección Descripción Principal */
+
+.description {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  padding: 0;
+  gap: 32px;
+}
+
+.description__container {
+  display: flex;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.description__container h1 {
+  font-size: 40px;
+  font-weight: 600;
+}
+.description__container p {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.description__links {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  a {
+    border: 1px solid black;
+    color: black;
+    padding: 8px;
+    border-radius: 8px;
+
+    background-color: white;
+  }
+  a:hover {
+    transition: 0.2s ease-in-out;
+    opacity: 0.5;
+  }
+  a:active {
+    opacity: 1;
+  }
+}
+
+.description img {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 100%;
+  width: 30%;
+}
+
+/* Contenido de las otras secciones */
+
+.aboutMe__container {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+
+.aboutMe__container h1 {
+  font-size: 40px;
+  font-weight: 600;
+}
+.aboutMe__container p {
+  line-height: 24px;
+}
+
+.skills__container,
+.hobbies__container,
+.education__container,
+.projects__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex: 1;
+  gap: 32px;
+  transition: opacity 0.3s ease-in-out;
+
+  h2 {
+    font-size: 32px;
+    font-weight: 600;
+  }
+}
+
+.skills__list,
+.hobbies__list,
+.education__list,
+.projects__list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 24px;
+}
+.courses__list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  color: black;
+}
+
+.education__list,
+.courses__list {
+  background-color: #ffffff;
+
+  padding: 24px 8px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+}
+
+.skills__item,
+.hobbies__item,
+.education__item,
+.projects__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  align-items: center;
+}
+
+.skills__item,
+.hobbies__item,
+.projects__item {
+  background-color: #ffffff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+
+  i {
+    color: black;
+  }
+  p {
+    color: black;
+  }
+}
+
+.hobbies__item {
+  width: 100%;
+}
+
+.projects__item {
+  width: 100%;
+}
+
+.projects__item img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 8px;
+  transition: 0.3s ease-in-out;
+}
+.projects__item img:hover {
+  transform: scale(1.1);
+  transition: 0.3s ease-in-out;
+}
+
+.education__item {
+  p {
+    color: black;
+  }
+}
+
+.education__item img {
+  height: 80px;
+}
+
+/* Contacto */
+
+.contact__container {
+  display: flex;
+
+  justify-content: center;
+  transition: 0.3s ease-in-out;
+  gap: 16px;
+}
+
+.contact__form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  h2 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+    color: black;
+  }
+}
+
+.contact__container {
+  border-radius: 8px;
+  padding: 8px;
+  background-color: white;
+}
+
+.form__container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form__control {
+  background-color: #ffffff;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: 1px solid black;
+  border-radius: 8px;
+
+  label {
+    color: black;
+  }
+  input {
+    color: black;
+  }
+  textarea {
+    color: black;
+    resize: none;
+  }
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-bottom: 2px solid #3a0061;
+}
+
+.form__button {
+  background-color: #3a0061;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  transition: 0.3s ease-in-out;
+}

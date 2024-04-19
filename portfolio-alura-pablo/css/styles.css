@@ -1,0 +1,94 @@
+body {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  background-color: white;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  font-size: 16px;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+header {
+  padding: 16px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+
+  a:hover {
+    opacity: 0.5;
+    transition: 0.2s ease-out;
+  }
+  a:active {
+    opacity: 1;
+    color: black;
+  }
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+}
+
+.header__options {
+  display: none;
+}
+
+footer {
+  width: 100%;
+  padding: 8px 0px;
+  bottom: 0%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+#darkModeToggle:hover {
+  cursor: pointer;
+  opacity: 0.5;
+  transition: 0.2s ease-in-out;
+}
+
+#darkModeToggle:active {
+  opacity: 1;
+}
+
+.dark-mode {
+  background-color: #222;
+  color: #fff;
+}
+
+.dark-mode button {
+  color: #fff;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+#moonIcon {
+  display: none;
+}
+
+.dark-mode #sunIcon {
+  display: none;
+}
+
+.dark-mode #moonIcon {
+  display: inline;
+}
+
+#nameError,
+#emailError,
+#subjectError,
+#messageError {
+  color: red;
+  display: none;
+}

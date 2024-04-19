@@ -1,0 +1,107 @@
+@media (min-width: 768px) {
+  .skills__list,
+  .hobbies__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 32px;
+  }
+
+  .projects__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 32px;
+    column-gap: 16px;
+  }
+
+  .projects__item {
+    width: auto;
+  }
+  .hobbies__item {
+    width: auto;
+  }
+  .projects__item img {
+    height: 120px;
+    transition: 0.3s ease-in-out;
+  }
+
+  .contact__form h2 {
+    text-align: left;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0px 120px;
+  }
+
+  .description {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .description__container {
+    width: 60%;
+    align-items: flex-start;
+  }
+  .aboutMe__container {
+    align-items: baseline;
+    width: 70%;
+  }
+
+  .header__options {
+    display: flex;
+    gap: 16px;
+  }
+
+  .header__mail {
+    display: none;
+  }
+
+  .skills__container,
+  .hobbies__container,
+  .education__container,
+  .projects__container {
+    display: none;
+  }
+
+  .education__list,
+  .courses__list {
+    background-color: #ffffff;
+
+    padding: 24px 0px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+  }
+
+  .skills__item,
+  .hobbies__item,
+  .projects__item {
+    background-color: #ffffff;
+
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+  }
+
+  .contact__container {
+    border-radius: 8px;
+    padding: 8px;
+    background-color: white;
+  }
+  #contact {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .contact__img {
+    display: none;
+  }
+}
+
+@media (min-width: 1025px) {
+  .contact__img {
+    display: block;
+    width: 50%;
+    border-radius: 8px;
+  }
+}
