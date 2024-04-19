@@ -189,7 +189,7 @@ function showSection(sectionId) {
         section.style.display = "flex";
         setTimeout(() => {
           section.style.opacity = 1;
-        }, 50);
+        }, 100);
       } else {
         section.style.opacity = 0;
         setTimeout(() => {
